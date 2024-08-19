@@ -38,15 +38,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""11d2aca1-c4d9-453c-ab4c-85a206294c8d"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Look"",
                     ""type"": ""Button"",
                     ""id"": ""a48aeae3-21a6-4153-a65f-b671239393b0"",
@@ -129,17 +120,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""02ab9894-25fc-43df-8294-7e8d040f69fe"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""2D Vector"",
@@ -254,6 +234,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""855c82cb-28d0-4960-a539-c78c01a2269a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -267,6 +256,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f9edd07-f7da-405c-8c6e-786e3bdc0925"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -276,13 +276,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Observer
         m_Observer = asset.FindActionMap("Observer", throwIfNotFound: true);
         m_Observer_Movement = m_Observer.FindAction("Movement", throwIfNotFound: true);
-        m_Observer_Interact = m_Observer.FindAction("Interact", throwIfNotFound: true);
         m_Observer_Look = m_Observer.FindAction("Look", throwIfNotFound: true);
         m_Observer_Mouse = m_Observer.FindAction("Mouse", throwIfNotFound: true);
         m_Observer_Zoom = m_Observer.FindAction("Zoom", throwIfNotFound: true);
         // Interactor
         m_Interactor = asset.FindActionMap("Interactor", throwIfNotFound: true);
         m_Interactor_Click = m_Interactor.FindAction("Click", throwIfNotFound: true);
+        m_Interactor_Back = m_Interactor.FindAction("Back", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -351,7 +351,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Observer;
     private List<IObserverActions> m_ObserverActionsCallbackInterfaces = new List<IObserverActions>();
     private readonly InputAction m_Observer_Movement;
-    private readonly InputAction m_Observer_Interact;
     private readonly InputAction m_Observer_Look;
     private readonly InputAction m_Observer_Mouse;
     private readonly InputAction m_Observer_Zoom;
@@ -360,7 +359,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         private @PlayerInputActions m_Wrapper;
         public ObserverActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Observer_Movement;
-        public InputAction @Interact => m_Wrapper.m_Observer_Interact;
         public InputAction @Look => m_Wrapper.m_Observer_Look;
         public InputAction @Mouse => m_Wrapper.m_Observer_Mouse;
         public InputAction @Zoom => m_Wrapper.m_Observer_Zoom;
@@ -376,9 +374,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
@@ -395,9 +390,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
@@ -429,11 +421,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Interactor;
     private List<IInteractorActions> m_InteractorActionsCallbackInterfaces = new List<IInteractorActions>();
     private readonly InputAction m_Interactor_Click;
+    private readonly InputAction m_Interactor_Back;
     public struct InteractorActions
     {
         private @PlayerInputActions m_Wrapper;
         public InteractorActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Click => m_Wrapper.m_Interactor_Click;
+        public InputAction @Back => m_Wrapper.m_Interactor_Back;
         public InputActionMap Get() { return m_Wrapper.m_Interactor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -446,6 +440,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Click.started += instance.OnClick;
             @Click.performed += instance.OnClick;
             @Click.canceled += instance.OnClick;
+            @Back.started += instance.OnBack;
+            @Back.performed += instance.OnBack;
+            @Back.canceled += instance.OnBack;
         }
 
         private void UnregisterCallbacks(IInteractorActions instance)
@@ -453,6 +450,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Click.started -= instance.OnClick;
             @Click.performed -= instance.OnClick;
             @Click.canceled -= instance.OnClick;
+            @Back.started -= instance.OnBack;
+            @Back.performed -= instance.OnBack;
+            @Back.canceled -= instance.OnBack;
         }
 
         public void RemoveCallbacks(IInteractorActions instance)
@@ -473,7 +473,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IObserverActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnMouse(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
@@ -481,5 +480,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IInteractorActions
     {
         void OnClick(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }
