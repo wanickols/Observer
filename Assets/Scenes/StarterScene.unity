@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 697644122}
   text: {fileID: 1187344227}
+  textSpeed: 0.05
 --- !u!4 &54199596
 Transform:
   m_ObjectHideFlags: 0
@@ -178,6 +179,7 @@ GameObject:
   - component: {fileID: 76880843}
   - component: {fileID: 76880842}
   - component: {fileID: 76880841}
+  - component: {fileID: 76880844}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
@@ -273,6 +275,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76880839}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &76880844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76880839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5031b639abd45ef4095c251c270da31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 0}
+  text:
+  - Yeah, sometimes I get told I talk to much, but you trying being a wall. What
+    elSe can I do? Oh...
+  - You're an observer. I have met your kind. Always watching...
+  - I get it. It's not you're fault. That's what they all say...
+  - But come on. Just stop with the games. You're despicable
 --- !u!1 &78934929
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +795,6 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 7a95493134ac8d643a437d7cc35f4dc6, type: 2}
   text:
   - Tis a cube
-  isLooping: 1
 --- !u!1 &597350463
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697644123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2092,7 +2112,6 @@ MonoBehaviour:
   text:
   - Ain't not cubin
   - cubin not cube
-  isLooping: 1
 --- !u!1 &1678046350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,7 +2275,6 @@ MonoBehaviour:
   text:
   - cubs? no cubes
   - cubs are are cute tho
-  isLooping: 1
 --- !u!1 &1867185036
 GameObject:
   m_ObjectHideFlags: 0

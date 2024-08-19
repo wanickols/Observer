@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +8,11 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TextMeshProUGUI text;
+
+    private string[] lines;
+    public float textSpeed;
+
+    private int index;
 
     private void Awake()
     {
@@ -21,6 +27,59 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        text.text = string.Empty;
+    }
+
+    public void StartMessage(string[] messages)
+    {
+        index = 0;
+        StopAllCoroutines();
+        text.text = string.Empty;
+        lines = messages;
+        dialogueBox.SetActive(true);
+        StartCoroutine(TypeLine());
+    }
+
+
+    public void DialogueInteract()
+    {
+        if (text.text == lines[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            text.text = lines[index];
+        }
+    }
+
+
+    private void NextLine()
+    {
+        if (index < lines.Length - 1)
+        {
+            ++index;
+            text.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            HideMessage();
+        }
+    }
+
+    IEnumerator TypeLine()
+    {
+        foreach (char c in lines[index].ToCharArray())
+        {
+            text.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+    }
+
     public void DisplayMessage(string message)
     {
         text.text = message;
@@ -29,7 +88,7 @@ public class DialogueManager : MonoBehaviour
 
     public void HideMessage()
     {
-        text.text = "";
+        text.text = string.Empty;
         dialogueBox.SetActive(false);
     }
 }
