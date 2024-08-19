@@ -49,6 +49,8 @@ public class InteractionManager : MonoBehaviour
     ///Main Interactions
     private void OnClick(InputAction.CallbackContext context)
     {
+        AudioManager.Instance.PlaySFX("Click");
+
         if (debugOn)
             DebugClick();
         else
