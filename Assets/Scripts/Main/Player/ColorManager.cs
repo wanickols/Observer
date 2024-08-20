@@ -21,6 +21,7 @@ public class ColorManager : MonoBehaviour
         }
         else
         {
+            Instance.playerVisuals = playerVisuals;
             Destroy(gameObject);
         }
     }

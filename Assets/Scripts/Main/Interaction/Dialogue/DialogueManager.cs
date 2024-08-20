@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    [SerializeField] private TextMeshProUGUI hintBox;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TextMeshProUGUI text;
 
@@ -45,6 +46,9 @@ public class DialogueManager : MonoBehaviour
 
     public void DialogueInteract()
     {
+        if (lines == null)
+            return;
+
         if (text.text == lines[index])
         {
             NextLine();
@@ -54,6 +58,12 @@ public class DialogueManager : MonoBehaviour
             StopAllCoroutines();
             text.text = lines[index];
         }
+    }
+
+    public void DisplayHint(string text)
+    {
+        hintBox.text = text;
+        hintBox.gameObject.SetActive(true);
     }
 
 
@@ -90,5 +100,6 @@ public class DialogueManager : MonoBehaviour
     {
         text.text = string.Empty;
         dialogueBox.SetActive(false);
+        hintBox.gameObject.SetActive(false);
     }
 }

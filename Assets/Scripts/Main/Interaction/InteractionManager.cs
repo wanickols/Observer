@@ -60,7 +60,7 @@ public class InteractionManager : MonoBehaviour
 
     private void OnBack(InputAction.CallbackContext context)
     {
-        DialogueManager.Instance.HideMessage();
+        DialogueManager.Instance.DialogueInteract();
     }
 
 
