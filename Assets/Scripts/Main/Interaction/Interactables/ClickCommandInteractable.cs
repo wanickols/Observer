@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickActionInteractable : MonoBehaviour, IInteractable
+public class ClickCommandInteractable : MonoBehaviour, IInteractable
 {
 
     //Actions
-    [SerializeField] protected List<Action> actions;
+    [SerializeField] protected List<Command> commands;
 
     //Mats
     [SerializeField] protected Material hoverMaterial;
@@ -23,13 +23,13 @@ public class ClickActionInteractable : MonoBehaviour, IInteractable
     ///Children
     protected void Interact()
     {
-        foreach (var action in actions)
+        foreach (var action in commands)
             action.Perform();
     }
 
     protected virtual void ResetInteractable()
     {
-        foreach (var action in actions)
+        foreach (var action in commands)
             action.Reset();
     }
 

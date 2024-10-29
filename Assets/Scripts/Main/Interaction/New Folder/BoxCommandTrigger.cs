@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxActionTrigger : MonoBehaviour
+public class BoxCommandTrigger : MonoBehaviour
 {
     [SerializeField] protected bool moreThanOneTrigger = false;
-    [SerializeField] protected List<Action> actions;
+    [SerializeField] protected List<Command> actions;
 
     /// Unity
     private void Awake()
@@ -17,7 +17,7 @@ public class BoxActionTrigger : MonoBehaviour
 
 
     ///Children
-    protected void Interact()
+    virtual protected void Interact()
     {
         foreach (var action in actions)
             action.Perform();

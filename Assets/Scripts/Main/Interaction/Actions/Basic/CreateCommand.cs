@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DestroyAction : Action
+public class CreateCommand : Command
 {
     [SerializeField] protected GameObject target;
     public override void Perform()
@@ -8,6 +8,6 @@ public class DestroyAction : Action
         if (target == null)
             return;
 
-        target.SetActive(false);
+        target.SetActive(true);
     }
 }
