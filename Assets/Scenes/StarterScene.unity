@@ -238,7 +238,8 @@ GameObject:
   - component: {fileID: 163440615}
   - component: {fileID: 163440614}
   - component: {fileID: 163440613}
-  - component: {fileID: 163440612}
+  - component: {fileID: 163440619}
+  - component: {fileID: 163440618}
   - component: {fileID: 163440617}
   - component: {fileID: 163440616}
   m_Layer: 0
@@ -263,21 +264,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &163440612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163440610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - Obstacles are only an illusion.
 --- !u!65 &163440613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -360,11 +346,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 163440610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  target: {fileID: 814644249}
+  target: {fileID: 979055806}
 --- !u!114 &163440617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,11 +359,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 163440610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 814644249}
+--- !u!114 &163440618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163440610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - Obstacles are only an illusion.
+--- !u!114 &163440619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163440610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moreThanOneTrigger: 0
-  target: {fileID: 979055806}
+  actions:
+  - {fileID: 163440618}
+  - {fileID: 163440617}
+  - {fileID: 163440616}
 --- !u!1 &222144800
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +406,8 @@ GameObject:
   - component: {fileID: 222144805}
   - component: {fileID: 222144804}
   - component: {fileID: 222144803}
-  - component: {fileID: 222144802}
+  - component: {fileID: 222144808}
+  - component: {fileID: 222144807}
   - component: {fileID: 222144806}
   m_Layer: 0
   m_Name: Dialogue6
@@ -415,22 +431,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &222144802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222144800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - Fine. Waste your time.
-  - I'll be waiting for you when you decide to go forward.
 --- !u!65 &222144803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -513,11 +513,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 222144800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2064637684}
+--- !u!114 &222144807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222144800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - Fine. Waste your time.
+  - I'll be waiting for you when you decide to go forward.
+--- !u!114 &222144808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222144800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moreThanOneTrigger: 0
-  target: {fileID: 2064637684}
+  actions:
+  - {fileID: 222144807}
+  - {fileID: 222144806}
 --- !u!1 &280571922
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,8 +628,9 @@ GameObject:
   - component: {fileID: 549507284}
   - component: {fileID: 549507283}
   - component: {fileID: 549507282}
-  - component: {fileID: 549507281}
-  - component: {fileID: 549507285}
+  - component: {fileID: 549507289}
+  - component: {fileID: 549507288}
+  - component: {fileID: 549507287}
   - component: {fileID: 549507286}
   m_Layer: 0
   m_Name: Dialogue2
@@ -623,23 +654,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &549507281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549507277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - I see. You are new being an observer. Your rashness shows. I expect your desire
-    to move quickly will lead to missing detail. However, that too, is part of why
-    I am here,
 --- !u!65 &549507282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -713,20 +727,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549507277}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &549507285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549507277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb028e67090d1f141ae6275b99a4516a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text: Press Space to control Dialogue
 --- !u!114 &549507286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,11 +736,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 549507277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1229982165}
+--- !u!114 &549507287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549507277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a3659e55f6dc4daa6e567ec7e3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Press Space to control Dialogue
+--- !u!114 &549507288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549507277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - I see. You are new being an observer. Your rashness shows. I expect your desire
+    to move quickly will lead to missing detail. However, that too, is part of why
+    I am here,
+--- !u!114 &549507289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549507277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moreThanOneTrigger: 0
-  target: {fileID: 1229982165}
+  actions:
+  - {fileID: 549507288}
+  - {fileID: 549507287}
+  - {fileID: 549507286}
 --- !u!1 &562879342
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +905,8 @@ GameObject:
   - component: {fileID: 604001607}
   - component: {fileID: 604001606}
   - component: {fileID: 604001605}
-  - component: {fileID: 604001604}
+  - component: {fileID: 604001610}
+  - component: {fileID: 604001609}
   m_Layer: 0
   m_Name: Dialogue4
   m_TagString: Untagged
@@ -883,23 +929,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &604001604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604001602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - There is a truth here.
-  - You are not bound by anything, even me, in this game.
-  - That said, there is nothing behind you any longer.
 --- !u!65 &604001605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -973,6 +1002,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604001602}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &604001609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604001602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - There is a truth here.
+  - You are not bound by anything, even me, in this game.
+  - That said, there is nothing behind you any longer.
+--- !u!114 &604001610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604001602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 604001609}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1138,8 @@ GameObject:
   - component: {fileID: 814644254}
   - component: {fileID: 814644253}
   - component: {fileID: 814644252}
-  - component: {fileID: 814644251}
+  - component: {fileID: 814644257}
+  - component: {fileID: 814644256}
   - component: {fileID: 814644255}
   m_Layer: 0
   m_Name: Dialogue12
@@ -1102,21 +1163,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &814644251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814644249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - I think you are ready.
 --- !u!65 &814644252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1199,11 +1245,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 814644249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1282893580}
+--- !u!114 &814644256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814644249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - I think you are ready.
+--- !u!114 &814644257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814644249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moreThanOneTrigger: 0
-  target: {fileID: 1282893580}
+  actions:
+  - {fileID: 814644256}
+  - {fileID: 814644255}
 --- !u!1 &817200268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1632,8 @@ GameObject:
   - component: {fileID: 1027696178}
   - component: {fileID: 1027696177}
   - component: {fileID: 1027696176}
-  - component: {fileID: 1027696175}
+  - component: {fileID: 1027696181}
+  - component: {fileID: 1027696180}
   m_Layer: 0
   m_Name: Dialogue3
   m_TagString: Untagged
@@ -1580,22 +1656,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1027696175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027696173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - 'At times, you must look where you least expect. '
-  - Now is not one of those times. Go forward.
 --- !u!65 &1027696176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1669,6 +1729,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027696173}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1027696180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027696173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - 'At times, you must look where you least expect. '
+  - Now is not one of those times. Go forward.
+--- !u!114 &1027696181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027696173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 1027696180}
 --- !u!1001 &1091311836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1721,10 +1811,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayNextSceneBox
       objectReference: {fileID: 0}
-    - target: {fileID: 2603574499903339405, guid: bc391d03fac90034bba09828b2d318da, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1752,7 +1838,8 @@ GameObject:
   - component: {fileID: 1130207281}
   - component: {fileID: 1130207280}
   - component: {fileID: 1130207279}
-  - component: {fileID: 1130207278}
+  - component: {fileID: 1130207283}
+  - component: {fileID: 1130207282}
   m_Layer: 0
   m_Name: Dialogue5
   m_TagString: Untagged
@@ -1775,21 +1862,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1130207278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130207276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - No actually, it's just empty.
 --- !u!65 &1130207279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1863,6 +1935,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130207276}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1130207282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130207276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - No actually, it's just empty.
+--- !u!114 &1130207283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130207276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 1130207282}
 --- !u!1 &1162963215 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 50705321922668466, guid: 53f4f89710fd8f14bbcebba91c54b4fe, type: 3}
@@ -1880,8 +1981,9 @@ GameObject:
   - component: {fileID: 1229982171}
   - component: {fileID: 1229982170}
   - component: {fileID: 1229982169}
-  - component: {fileID: 1229982168}
-  - component: {fileID: 1229982167}
+  - component: {fileID: 1229982175}
+  - component: {fileID: 1229982174}
+  - component: {fileID: 1229982173}
   - component: {fileID: 1229982172}
   m_Layer: 0
   m_Name: Dialogue8
@@ -1905,37 +2007,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1229982167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229982165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb028e67090d1f141ae6275b99a4516a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text: Move the scroll wheel to zoom.
---- !u!114 &1229982168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229982165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - Your purpose? You sound almost human. Observing, that is your purpose. Nothing
-    more.
-  - Now allow me to show you.
 --- !u!65 &1229982169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2018,11 +2089,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 1229982165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2129012286}
+--- !u!114 &1229982173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229982165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - Your purpose? You sound almost human. Observing, that is your purpose. Nothing
+    more.
+  - Now allow me to show you.
+--- !u!114 &1229982174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229982165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a3659e55f6dc4daa6e567ec7e3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Move the scroll wheel to zoom.
+--- !u!114 &1229982175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229982165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moreThanOneTrigger: 0
-  target: {fileID: 2129012286}
+  actions:
+  - {fileID: 1229982174}
+  - {fileID: 1229982173}
+  - {fileID: 1229982172}
 --- !u!1 &1282893580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,8 +2151,9 @@ GameObject:
   - component: {fileID: 1282893585}
   - component: {fileID: 1282893584}
   - component: {fileID: 1282893583}
-  - component: {fileID: 1282893582}
-  - component: {fileID: 1282893581}
+  - component: {fileID: 1282893589}
+  - component: {fileID: 1282893588}
+  - component: {fileID: 1282893587}
   m_Layer: 0
   m_Name: Dialogue13
   m_TagString: Untagged
@@ -2044,35 +2161,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1282893581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282893580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  target: {fileID: 1091311838}
---- !u!114 &1282893582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282893580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - Let the game begin.
 --- !u!65 &1282893583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2161,6 +2249,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282893587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282893580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1091311838}
+--- !u!114 &1282893588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282893580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - Let the game begin.
+--- !u!114 &1282893589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282893580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 1282893588}
+  - {fileID: 1282893587}
 --- !u!1 &1360096991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2422,8 @@ GameObject:
   - component: {fileID: 1758637653}
   - component: {fileID: 1758637652}
   - component: {fileID: 1758637651}
-  - component: {fileID: 1758637650}
+  - component: {fileID: 1758637657}
+  - component: {fileID: 1758637656}
   - component: {fileID: 1758637655}
   - component: {fileID: 1758637654}
   m_Layer: 0
@@ -2316,21 +2448,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1758637650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758637647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  text:
-  - Very Nice. You've almost earned your full controls
 --- !u!65 &1758637651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2413,10 +2530,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758637647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c182ec8d8e824584ab548206ca9e7c77, type: 3}
+  m_Script: {fileID: 11500000, guid: 3761f73837aba2e4189c4018caecaf7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
   target: {fileID: 200673459921740376}
 --- !u!114 &1758637655
 MonoBehaviour:
@@ -2427,25 +2543,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758637647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
   target: {fileID: 163440610}
---- !u!114 &1807342308
+--- !u!114 &1758637656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200673459921740376}
+  m_GameObject: {fileID: 1758637647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103732a5a580a094bb1632aa8300b171, type: 3}
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverMaterial: {fileID: 2100000, guid: 7a95493134ac8d643a437d7cc35f4dc6, type: 2}
-  target: {fileID: 1758637647}
+  text:
+  - Very Nice. You've almost earned your full controls
+--- !u!114 &1758637657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758637647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 1758637656}
+  - {fileID: 1758637655}
+  - {fileID: 1758637654}
 --- !u!1 &1971164140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,6 +2775,7 @@ GameObject:
   - component: {fileID: 2064637689}
   - component: {fileID: 2064637688}
   - component: {fileID: 2064637687}
+  - component: {fileID: 2064637690}
   - component: {fileID: 2064637686}
   m_Layer: 0
   m_Name: Dialogue7
@@ -2675,10 +2808,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064637684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
   text:
   - 'That took awhile, didn''t it. '
 --- !u!65 &2064637687
@@ -2754,6 +2886,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064637684}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2064637690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064637684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 2064637686}
 --- !u!1 &2129012286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,7 +2913,8 @@ GameObject:
   - component: {fileID: 2129012292}
   - component: {fileID: 2129012291}
   - component: {fileID: 2129012290}
-  - component: {fileID: 2129012288}
+  - component: {fileID: 2129012295}
+  - component: {fileID: 2129012294}
   - component: {fileID: 2129012293}
   m_Layer: 0
   m_Name: Dialogue9
@@ -2790,20 +2938,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464946638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2129012288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129012286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb028e67090d1f141ae6275b99a4516a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 1
-  text: Left click objects to interact.
 --- !u!65 &2129012290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2886,11 +3020,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 2129012286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 200673459921740376}
+--- !u!114 &2129012294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129012286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a3659e55f6dc4daa6e567ec7e3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Left click objects to interact.
+--- !u!114 &2129012295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129012286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moreThanOneTrigger: 0
-  target: {fileID: 200673459921740376}
+  actions:
+  - {fileID: 2129012294}
+  - {fileID: 2129012293}
 --- !u!1 &200673459921740376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,7 +3065,8 @@ GameObject:
   - component: {fileID: 5799377622297852039}
   - component: {fileID: 5880968640045157741}
   - component: {fileID: 2480717190608195748}
-  - component: {fileID: 1807342308}
+  - component: {fileID: 5880968640045157743}
+  - component: {fileID: 5880968640045157742}
   m_Layer: 0
   m_Name: TextBox
   m_TagString: Untagged
@@ -3096,9 +3259,10 @@ GameObject:
   - component: {fileID: 6349527295317258446}
   - component: {fileID: 8241668964722741458}
   - component: {fileID: 5366436186774352789}
-  - component: {fileID: 8241668964722741461}
-  - component: {fileID: 8241668964722741460}
-  - component: {fileID: 8241668964722741459}
+  - component: {fileID: 8241668964722741465}
+  - component: {fileID: 8241668964722741464}
+  - component: {fileID: 8241668964722741463}
+  - component: {fileID: 8241668964722741462}
   m_Layer: 0
   m_Name: Dialogue1
   m_TagString: Untagged
@@ -3179,6 +3343,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5880968640045157742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200673459921740376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1758637647}
+--- !u!114 &5880968640045157743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200673459921740376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8b934d019ceb44a841c26f09b9605a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7a95493134ac8d643a437d7cc35f4dc6, type: 2}
+  actions:
+  - {fileID: 5880968640045157742}
 --- !u!33 &6349527295317258446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3231,7 +3423,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8241668964722741459
+--- !u!114 &8241668964722741462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3240,40 +3432,54 @@ MonoBehaviour:
   m_GameObject: {fileID: 4561666487130983402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c182ec8d8e824584ab548206ca9e7c77, type: 3}
+  m_Script: {fileID: 11500000, guid: ff3ea2e8ad1cb6b46aa1b39892e80c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  target: {fileID: 1162963215}
---- !u!114 &8241668964722741460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561666487130983402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e08ba6c40acfb944a2196111330b75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
-  target: {fileID: 549507277}
---- !u!114 &8241668964722741461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561666487130983402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fde9a3c9f9b9446b14f084222aca9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
   text:
   - Welcome Observer. I have been expecting you. I am here to guide you on your journey.
+--- !u!114 &8241668964722741463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561666487130983402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3761f73837aba2e4189c4018caecaf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1162963215}
+--- !u!114 &8241668964722741464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561666487130983402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf7e6e32dde86841b05fcbf98c26e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 549507277}
+--- !u!114 &8241668964722741465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561666487130983402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreThanOneTrigger: 0
+  actions:
+  - {fileID: 8241668964722741464}
+  - {fileID: 8241668964722741463}
+  - {fileID: 8241668964722741462}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

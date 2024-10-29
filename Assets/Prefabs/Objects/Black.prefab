@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4546429451601434979}
   - component: {fileID: 5547564658421000947}
   - component: {fileID: 6853471943171075626}
-  - component: {fileID: 7008575609723682507}
+  - component: {fileID: 2101003248697448734}
+  - component: {fileID: 747540662283031843}
   m_Layer: 0
   m_Name: Black
   m_TagString: Untagged
@@ -108,7 +109,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7008575609723682507
+--- !u!114 &2101003248697448734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,8 +118,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4473982848822079671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee073a980166a82478fe0e6edbf987f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d8b934d019ceb44a841c26f09b9605a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7a95493134ac8d643a437d7cc35f4dc6, type: 2}
+  actions:
+  - {fileID: 747540662283031843}
+--- !u!114 &747540662283031843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473982848822079671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c38eb58db0d764c8a5d843a0e8647d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   materialToChangeTo: Black

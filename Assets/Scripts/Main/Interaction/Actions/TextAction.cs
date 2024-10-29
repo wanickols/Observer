@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextInteractable : ColorInteractable
+public class TextAction : Action
 {
-
     [SerializeField] private List<string> text;
 
-    protected override void Interact()
+    public override void Perform()
     {
         if (HasInteracted)
         {
@@ -19,5 +18,9 @@ public class TextInteractable : ColorInteractable
         HasInteracted = true;
     }
 
-
+    public override void Reset()
+    {
+        base.Reset();
+        HasInteracted = false;
+    }
 }

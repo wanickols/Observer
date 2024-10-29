@@ -1,12 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ColorInteractable : MonoBehaviour, IInteractable
+public class ClickActionInteractable : MonoBehaviour, IInteractable
 {
-    ///Mats
+
+    //Actions
+    [SerializeField] protected List<Action> actions;
+
+    //Mats
     [SerializeField] protected Material hoverMaterial;
     protected Material originalMaterial;
-
-    protected bool HasInteracted = false;
 
     ///Unity
     protected virtual void Start() => originalMaterial = GetComponent<Renderer>().material;
@@ -18,7 +21,19 @@ public abstract class ColorInteractable : MonoBehaviour, IInteractable
     public void OnHoverExit() => GetComponent<Renderer>().material = originalMaterial;
 
     ///Children
-    protected abstract void Interact();
-    protected virtual void ResetInteractable() => HasInteracted = false;
-}
+    protected void Interact()
+    {
+        foreach (var action in actions)
+            action.Perform();
+    }
 
+    protected virtual void ResetInteractable()
+    {
+        foreach (var action in actions)
+            action.Reset();
+    }
+
+
+
+
+}

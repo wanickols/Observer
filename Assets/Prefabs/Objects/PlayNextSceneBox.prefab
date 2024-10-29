@@ -12,14 +12,15 @@ GameObject:
   - component: {fileID: 4859814842631438505}
   - component: {fileID: 7570481666235752629}
   - component: {fileID: 5843108193844282354}
-  - component: {fileID: 2403837760569272931}
+  - component: {fileID: 2468434188082666721}
+  - component: {fileID: 4905204177216164993}
   m_Layer: 0
   m_Name: PlayNextSceneBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1069547650626601888
 Transform:
   m_ObjectHideFlags: 0
@@ -108,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2403837760569272931
+--- !u!114 &2468434188082666721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,9 +118,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2603574499903339405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61899920408221349b06c616af874f27, type: 3}
+  m_Script: {fileID: 11500000, guid: 460dff3ec0cafae4d869a5777d85deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreThanOneTrigger: 0
+  moreThanOneTrigger: 1
+  actions:
+  - {fileID: 4905204177216164993}
+--- !u!114 &4905204177216164993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603574499903339405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a54381aab5346429e35d018df3802c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playNext: 1
   desiredScene: 0

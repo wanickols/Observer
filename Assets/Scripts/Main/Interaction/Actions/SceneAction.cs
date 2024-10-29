@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class SceneShiftInteractable : ColorInteractable
+public class SceneAction : Action
 {
     [SerializeField] bool playNext = false;
     [SerializeField] Scenes desiredScene = Scenes.SceneOne;
-    protected override void Interact()
+    public override void Perform()
     {
         if (playNext)
             Loader.LoadNextScene();
