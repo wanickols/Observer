@@ -1,9 +1,14 @@
 using Cinemachine;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    ///Actions
+    public Action<float> zoomed;
+
     ///Visible Variables
 
     [Header("Options")]
@@ -135,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
         virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(virtualCamera.m_Lens.FieldOfView, targetFieldOfView, Time.fixedDeltaTime * zoomSpeed);
 
+        zoomed?.Invoke(targetFieldOfView);
     }
 
     private void StartLooking(InputAction.CallbackContext context) => isLooking = true;

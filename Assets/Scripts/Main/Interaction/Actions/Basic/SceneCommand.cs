@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SceneAction : Action
+public class SceneCommand : Command
 {
     [SerializeField] bool playNext = false;
     [SerializeField] Scenes desiredScene = Scenes.SceneOne;

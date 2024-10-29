@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextAction : Action
+public class TextCommand : Command
 {
     [SerializeField] private List<string> text;
 

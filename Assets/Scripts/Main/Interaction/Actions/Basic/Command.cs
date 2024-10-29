@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Action : MonoBehaviour
+public abstract class Command : MonoBehaviour
 {
     protected bool HasInteracted = false;
     abstract public void Perform();
