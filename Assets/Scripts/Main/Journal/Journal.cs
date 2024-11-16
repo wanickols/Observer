@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Journal : MonoBehaviour
 {
+    [SerializeField] public JournalManager manager;
     public static Journal Instance { get; private set; } // Singleton instance
 
     private List<JournalEntry> entries; // Main list of entries
@@ -21,6 +22,9 @@ public class Journal : MonoBehaviour
             Destroy(gameObject); // Destroy any duplicate instances
             return; // Exit to avoid reinitializing
         }
+
+        if (manager == null)
+            manager = GetComponent<JournalManager>();
 
         // Initialize the entry lists
         entries = new List<JournalEntry>();
