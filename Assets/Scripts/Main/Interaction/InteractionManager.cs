@@ -10,6 +10,7 @@ public class InteractionManager : MonoBehaviour
     private PlayerInputActions inputActions;
     private InputAction clickAction;
     private InputAction backAction;
+    private InputAction journalAction;
 
     private IInteractable currentInteractable;
 
@@ -34,6 +35,10 @@ public class InteractionManager : MonoBehaviour
         backAction = inputActions.Interactor.Back;
         backAction.performed += OnBack;
         backAction.Enable();
+
+        journalAction = inputActions.Interactor.Journal;
+        journalAction.performed += OnJ;
+        journalAction.Enable();
     }
 
     private void OnDisable()
@@ -58,12 +63,9 @@ public class InteractionManager : MonoBehaviour
     }
 
 
-    private void OnBack(InputAction.CallbackContext context)
-    {
-        DialogueManager.Instance.DialogueInteract();
-    }
+    private void OnBack(InputAction.CallbackContext context) => DialogueManager.Instance.DialogueInteract();
 
-
+    private void OnJ(InputAction.CallbackContext context) => Journal.Instance.manager.toggle();
 
     private void HandleHover()
     {
