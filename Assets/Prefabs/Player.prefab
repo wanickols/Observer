@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432c5344b9ba2d6448137d4fbf5ba6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMovementEnabled: 0
+  xMovementEnabled: 1
   yMovementEnabled: 1
   camerMovementEnabled: 0
   zoomEnabled: 1
