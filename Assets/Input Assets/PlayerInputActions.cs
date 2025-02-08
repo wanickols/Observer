@@ -243,6 +243,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Journal"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebee7277-691b-49d7-8d69-ca501c9f71b4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -267,6 +276,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62a15cc2-10cc-4aa0-8e75-a82bb23e516e"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -283,6 +303,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Interactor = asset.FindActionMap("Interactor", throwIfNotFound: true);
         m_Interactor_Click = m_Interactor.FindAction("Click", throwIfNotFound: true);
         m_Interactor_Back = m_Interactor.FindAction("Back", throwIfNotFound: true);
+        m_Interactor_Journal = m_Interactor.FindAction("Journal", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -422,12 +443,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IInteractorActions> m_InteractorActionsCallbackInterfaces = new List<IInteractorActions>();
     private readonly InputAction m_Interactor_Click;
     private readonly InputAction m_Interactor_Back;
+    private readonly InputAction m_Interactor_Journal;
     public struct InteractorActions
     {
         private @PlayerInputActions m_Wrapper;
         public InteractorActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Click => m_Wrapper.m_Interactor_Click;
         public InputAction @Back => m_Wrapper.m_Interactor_Back;
+        public InputAction @Journal => m_Wrapper.m_Interactor_Journal;
         public InputActionMap Get() { return m_Wrapper.m_Interactor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -443,6 +466,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Back.started += instance.OnBack;
             @Back.performed += instance.OnBack;
             @Back.canceled += instance.OnBack;
+            @Journal.started += instance.OnJournal;
+            @Journal.performed += instance.OnJournal;
+            @Journal.canceled += instance.OnJournal;
         }
 
         private void UnregisterCallbacks(IInteractorActions instance)
@@ -453,6 +479,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Back.started -= instance.OnBack;
             @Back.performed -= instance.OnBack;
             @Back.canceled -= instance.OnBack;
+            @Journal.started -= instance.OnJournal;
+            @Journal.performed -= instance.OnJournal;
+            @Journal.canceled -= instance.OnJournal;
         }
 
         public void RemoveCallbacks(IInteractorActions instance)
@@ -481,5 +510,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnClick(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+        void OnJournal(InputAction.CallbackContext context);
     }
 }
