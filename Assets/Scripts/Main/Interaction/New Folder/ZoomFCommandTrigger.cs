@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ZoomFCommandTrigger : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private CameraManager cameraManager;
     [SerializeField] private List<FCommand> fCommands;
 
     private bool canZoom = false;
@@ -12,7 +12,7 @@ public class ZoomFCommandTrigger : MonoBehaviour
     {
         BoxCollider collider = GetComponent<BoxCollider>();
         collider.isTrigger = true;
-        playerMovement.zoomed += onZoomed;
+        cameraManager.zoomed += onZoomed;
     }
     private void onZoomed(float val)
     {
@@ -25,6 +25,6 @@ public class ZoomFCommandTrigger : MonoBehaviour
 
     private void OnTriggerEnter() => canZoom = true;
     private void OnTriggerExit() => canZoom = false;
-    private void OnDestroy() => playerMovement.zoomed -= onZoomed;
+    private void OnDestroy() => cameraManager.zoomed -= onZoomed;
 
 }
