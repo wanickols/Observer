@@ -15,6 +15,7 @@ public class BoxCommandTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) => Interact();
 
+    private void OnTriggerExit(Collider other) => ReverseInteract();
 
     ///Children
     virtual protected void Interact()
@@ -25,5 +26,11 @@ public class BoxCommandTrigger : MonoBehaviour
 
         if (!moreThanOneTrigger)
             Destroy(gameObject);
+    }
+
+    virtual protected void ReverseInteract()
+    {
+        foreach (var action in actions)
+            action.Undo();
     }
 }
