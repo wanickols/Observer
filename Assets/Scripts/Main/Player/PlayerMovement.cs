@@ -1,13 +1,9 @@
-using Cinemachine;
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    ///Actions
-    public Action<float> zoomed;
 
     ///Visible Variables
 
@@ -15,20 +11,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool xMovementEnabled = true;
     [SerializeField] private bool yMovementEnabled = true;
     [SerializeField] private bool camerMovementEnabled = true;
-    [SerializeField] private bool zoomEnabled = true;
 
     [Header("Movement and Camera")]
     [SerializeField] private float moveSpeed = 20f;
     [SerializeField] private float lookSpeed = 100f;
 
-    [Header("Zoom")]
-    [SerializeField] private float zoomSpeed = 10f;
-    [SerializeField] private float maxFieldOfView = 50f;
-    [SerializeField] private float minFieldOfView = 20f;
-
     [Header("Player")]
-
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
 
     ///Private
@@ -36,14 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     //Trackers
     private Vector2 rotation = Vector2.zero;
-    private float targetFieldOfView;
+
 
     private bool isLooking = false;
 
     //Input Management
     private PlayerInputActions inputActions;
     private InputAction movement;
-    private InputAction zoom;
     private InputAction mouseMovement;
     private InputAction look;
 
@@ -53,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inputActions = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
-        targetFieldOfView = virtualCamera.m_Lens.FieldOfView;
+
     }
     private void OnEnable()
     {
@@ -62,10 +49,6 @@ public class PlayerMovement : MonoBehaviour
 
         mouseMovement = inputActions.Observer.Mouse;
         mouseMovement.Enable();
-
-        zoom = inputActions.Observer.Zoom;
-        zoom.performed += Zoom;
-        zoom.Enable();
 
         look = inputActions.Observer.Look;
         look.performed += StartLooking;
@@ -124,24 +107,6 @@ public class PlayerMovement : MonoBehaviour
         transform.localEulerAngles = new Vector3(rotation.y, rotation.x, 0f);
     }
 
-    private void Zoom(InputAction.CallbackContext context)
-    {
-        if (!zoomEnabled)
-            return;
-
-        float zoomVal = zoom.ReadValue<float>();
-
-        if (zoomVal < 0f)
-            targetFieldOfView += 5;
-        else if (zoomVal > 0f)
-            targetFieldOfView -= 5f;
-
-        targetFieldOfView = Mathf.Clamp(targetFieldOfView, minFieldOfView, maxFieldOfView);
-
-        virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(virtualCamera.m_Lens.FieldOfView, targetFieldOfView, Time.fixedDeltaTime * zoomSpeed);
-
-        zoomed?.Invoke(targetFieldOfView);
-    }
 
     private void StartLooking(InputAction.CallbackContext context) => isLooking = true;
     private void StopLooking(InputAction.CallbackContext context) => isLooking = false;
