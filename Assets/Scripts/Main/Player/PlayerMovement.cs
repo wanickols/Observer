@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,32 +27,19 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isLooking = false;
 
-    //Input Management
-    private PlayerInputActions inputActions;
-    private InputAction movement;
-    private InputAction mouseMovement;
-    private InputAction look;
 
 
     /// Unity Functions
     private void Awake()
     {
-        inputActions = new PlayerInputActions();
+
         rb = GetComponent<Rigidbody>();
 
     }
     private void OnEnable()
     {
-        movement = inputActions.Observer.Movement;
-        movement.Enable();
-
-        mouseMovement = inputActions.Observer.Mouse;
-        mouseMovement.Enable();
-
-        look = inputActions.Observer.Look;
-        look.performed += StartLooking;
-        look.canceled += StopLooking;
-        look.Enable();
+        InputManager.Instance.OnLookStarted += StartLooking;
+        InputManager.Instance.OnLookCanceled += StopLooking;
     }
 
     private void Update()
@@ -68,19 +54,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        movement.Disable();
-        mouseMovement.Disable();
-
-        look.performed -= StartLooking;
-        look.canceled -= StopLooking;
-        look.Disable();
+        InputManager.Instance.OnLookStarted -= StartLooking;
+        InputManager.Instance.OnLookCanceled -= StopLooking;
     }
+
 
 
     /// Actions
     private void Move()
     {
-        Vector2 inputDir = movement.ReadValue<Vector2>();
+        Vector2 inputDir = InputManager.Instance.GetMovementVector();
 
         if (inputDir.magnitude <= 0) return;
         if (!yMovementEnabled) inputDir.y = 0;
@@ -98,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if (!camerMovementEnabled)
             return;
 
-        Vector2 lookInput = mouseMovement.ReadValue<Vector2>();
+        Vector2 lookInput = InputManager.Instance.GetMouseDelta();
 
         rotation.x += lookInput.x * lookSpeed * Time.deltaTime;
         rotation.y -= lookInput.y * lookSpeed * Time.deltaTime;
@@ -108,6 +91,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void StartLooking(InputAction.CallbackContext context) => isLooking = true;
-    private void StopLooking(InputAction.CallbackContext context) => isLooking = false;
+    private void StartLooking() => isLooking = true;
+    private void StopLooking() => isLooking = false;
 }
