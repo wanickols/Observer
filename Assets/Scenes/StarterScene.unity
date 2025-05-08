@@ -3086,6 +3086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1423014799466741237, guid: 972ea809aff117341a9a53ea86e785be, type: 3}
+      propertyPath: camerMovementEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3584306795302268637, guid: 972ea809aff117341a9a53ea86e785be, type: 3}
       propertyPath: mainCamera
       value: 
@@ -3468,11 +3472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8053302640600312096, guid: 53f4f89710fd8f14bbcebba91c54b4fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5501.122
+      value: 7111.4893
       objectReference: {fileID: 0}
     - target: {fileID: 8053302640600312096, guid: 53f4f89710fd8f14bbcebba91c54b4fe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14817.794
+      value: -18977.734
       objectReference: {fileID: 0}
     - target: {fileID: 8528824631767140537, guid: 53f4f89710fd8f14bbcebba91c54b4fe, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3732,7 +3736,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 918281384863754965}
   - {fileID: 3121416256270584743}
+  - {fileID: 918281384863754965}
   - {fileID: 280571923}
   - {fileID: 1623915615}

@@ -1,11 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
 
-
     ///Visible Variables
-
     [Header("Options")]
     [SerializeField] private bool xMovementEnabled = true;
     [SerializeField] private bool yMovementEnabled = true;
@@ -14,9 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement and Camera")]
     [SerializeField] private float moveSpeed = 20f;
     [SerializeField] private float lookSpeed = 100f;
-
-    [Header("Player")]
-
 
     ///Private
     private Rigidbody rb;
@@ -28,13 +24,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isLooking = false;
 
 
-
     /// Unity Functions
     private void Awake()
     {
-
         rb = GetComponent<Rigidbody>();
-
     }
     private void OnEnable()
     {
@@ -47,10 +40,7 @@ public class PlayerMovement : MonoBehaviour
         if (isLooking)
             Look();
     }
-    private void FixedUpdate()
-    {
-        Move();
-    }
+    private void FixedUpdate() => Move();
 
     private void OnDisable()
     {
@@ -71,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Adjust based on facing position
         Vector3 moveDir = transform.forward * inputDir.y + transform.right * inputDir.x;
-
 
         rb.AddForce(moveDir * moveSpeed, ForceMode.Acceleration);
     }

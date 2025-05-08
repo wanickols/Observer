@@ -2,7 +2,6 @@ using Cinemachine;
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CameraManager : MonoBehaviour
 {
@@ -25,27 +24,20 @@ public class CameraManager : MonoBehaviour
     private Coroutine shakeCoroutine;
     private Coroutine zoomCoroutine;
 
-    private bool canForceZoom = true;
-
-    private PlayerInputActions inputActions;
-    private InputAction zoom;
     private float targetFieldOfView;
-    private bool _isForced = false;
 
     ///Unity Functions
+
     private void Awake()
     {
-        inputActions = new PlayerInputActions();
-
-        zoom = inputActions.Observer.Zoom;
-        zoom.performed += Zoom;
-        zoom.Enable();
-
         targetFieldOfView = virtualCamera.m_Lens.FieldOfView;
 
         noise = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
-
+    private void OnEnable()
+    {
+        InputManager.Instance.OnZoom += Zoom;
+    }
 
     ///Public Functions
     public void Shake(int intensity, float duration)
@@ -57,12 +49,12 @@ public class CameraManager : MonoBehaviour
         shakeCoroutine = StartCoroutine(CO_Shake(intensity, duration));
     }
 
-    public void Zoom(InputAction.CallbackContext context)
+    public void Zoom()
     {
         if (!zoomEnabled)
             return;
 
-        float zoomVal = zoom.ReadValue<float>();
+        float zoomVal = InputManager.Instance.GetScrollDelta();
 
         if (zoomVal < 0f)
             targetFieldOfView += 5;
@@ -72,7 +64,7 @@ public class CameraManager : MonoBehaviour
         ZoomToTarget();
     }
 
-    public void ZoomFreeze(float duration) { }
+    //public void ZoomFreeze(float duration) { }
 
     public void StopZoom() => StopCoroutine(zoomCoroutine);
 

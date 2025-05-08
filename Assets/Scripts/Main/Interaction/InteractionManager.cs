@@ -6,18 +6,24 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private bool debugOn = false;
 
-    //Input
-    private PlayerInputActions inputActions;
-    private InputAction clickAction;
-    private InputAction backAction;
-    private InputAction journalAction;
-
     private IInteractable currentInteractable;
 
     /// Unity Functions
-    private void Awake()
+
+    private void OnEnable()
     {
-        inputActions = new PlayerInputActions();
+
+        InputManager.Instance.OnClick += OnClick;
+        InputManager.Instance.OnBack += OnBack;
+        InputManager.Instance.OnOpenJournal += OnJ;
+
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Instance.OnClick -= OnClick;
+        InputManager.Instance.OnBack -= OnBack;
+        InputManager.Instance.OnOpenJournal -= OnJ;
     }
 
     private void Update()
@@ -25,34 +31,8 @@ public class InteractionManager : MonoBehaviour
         HandleHover();
     }
 
-    private void OnEnable()
-    {
-
-        clickAction = inputActions.Interactor.Click;
-        clickAction.performed += OnClick;
-        clickAction.Enable();
-
-        backAction = inputActions.Interactor.Back;
-        backAction.performed += OnBack;
-        backAction.Enable();
-
-        journalAction = inputActions.Interactor.Journal;
-        journalAction.performed += OnJ;
-        journalAction.Enable();
-    }
-
-    private void OnDisable()
-    {
-        clickAction.performed -= OnClick;
-        clickAction.Disable();
-
-        backAction.performed -= OnClick;
-        backAction.Disable();
-    }
-
-
     ///Main Interactions
-    private void OnClick(InputAction.CallbackContext context)
+    private void OnClick()
     {
         AudioManager.Instance.PlaySFX("Click");
 
@@ -63,9 +43,9 @@ public class InteractionManager : MonoBehaviour
     }
 
 
-    private void OnBack(InputAction.CallbackContext context) => DialogueManager.Instance.DialogueInteract();
+    private void OnBack() => DialogueManager.Instance.DialogueInteract();
 
-    private void OnJ(InputAction.CallbackContext context) => Journal.Instance.manager.toggle();
+    private void OnJ() => Journal.Instance.manager.toggle();
 
     private void HandleHover()
     {
