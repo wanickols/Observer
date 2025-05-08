@@ -5,9 +5,6 @@ public class ColorManager : MonoBehaviour
 {
 
     [SerializeField] private Mat[] mats;
-
-
-
     [SerializeField] private Renderer playerVisuals;
 
     public static ColorManager Instance;
